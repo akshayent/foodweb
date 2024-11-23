@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation & Billing</title>
+
+    <!--        CSS      -->
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px black;
+        }
+        h2 {
+            text-align: center;
+            color:grey;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: grey;
+        }
+        input[type="text"], input[type="number"], input[type="email"], select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid grey;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blue;
+        }
+        .bill-section, .payment-section {
+            margin-top: 30px;
+            display: none;
+        }
+        .bill-item, .payment-method {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Restaurant Reservation</h2>
+    
+    <!-- Reservation Form -->
+    <form id="reservationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="tableSize">Table Size:</label>
+        <select id="tableSize" required>
+            <option value="2">2 People</option>
+            <option value="4">4 People</option>
+            <option value="6">6 People</option>
+            <option value="8">8 People</option>
+        </select>
+        
+        <button type="button" onclick="reserveTable()">Reserve Table</button>
+    </form>
+
+    <!-- Bill Section -->
+    <div class="bill-section" id="billSection">
+        <h2>Bill</h2>
+        <div class="bill-item">Reservation Fee: $50</div>
+        <div class="bill-item">Food Charges: $100</div>
+        <div class="bill-item">Total: $150</div>
+        <button onclick="showPaymentOptions()">Proceed to Payment</button>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section" id="paymentSection">
+        <h2>Select Payment Method</h2>
+        <label class="payment-method">
+            <input type="radio" name="paymentMethod" value="Cash" required> Cash
+        </label>
+        <label class="payment-method">
+            <input type="radio" name="paymentMethod" value="Online" required> Online
+        </label>
+        <button onclick="completePayment()">Complete Payment</button>
+    </div>
+</div>
+
+ <!-- Javacript -->
+<script>
+    function reserveTable() {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const tableSize = document.getElementById('tableSize').value;
+
+        // Basic form validation
+        if (name && phone && email && tableSize) {
+            // Show the bill section after reservation
+            document.getElementById('reservationForm').style.display = 'none';
+            document.getElementById('billSection').style.display = 'block';
+            alert(`Reservation Successful for ${name}`);
+        } else {
+            alert("Please fill out all fields.");
+        }
+    }
+
+    function showPaymentOptions() {
+        // Hide the bill section and show payment options
+        document.getElementById('billSection').style.display = 'none';
+        document.getElementById('paymentSection').style.display = 'block';
+    }
+
+    function completePayment() {
+        // Check the selected payment method
+        const paymentMethods = document.getElementsByName('paymentMethod');
+        let selectedMethod = '';
+        for (const method of paymentMethods) {
+            if (method.checked) {
+                selectedMethod = method.value;
+                break;
+            }
+        }
+
+        if (selectedMethod) {
+            alert(`Payment completed using ${selectedMethod}`);
+            // Reset the form for the next reservation
+            document.getElementById('reservationForm').reset();
+            document.getElementById('reservationForm').style.display = 'block';
+            document.getElementById('paymentSection').style.display = 'none';
+        } else {
+            alert("Please select a payment method.");
+        }
+    }
+</script>
+
+</body>
+</html>

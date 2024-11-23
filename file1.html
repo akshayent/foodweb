@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Bay</title>
+    <link rel="stylesheet" href="file2.css">
+</head>
+<body>
+    <header>
+        <!-- HTML -->
+        <h1>Foodie Bay</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="file3.html">Book Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Foodie Bay</h2>
+        <img src="logorestaurannt.png"  height="200px" width="600px">
+        <p>Your go-to place for delightful meals and memorable experiences.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <img src="https://i.ytimg.com/vi/JEeO_hagtVM/maxresdefault.jpg" alt="Pasta Primavera">
+            <p>Pasta Primavera - Rs.129</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0YECYrInS8c_y20uVM1nkC92a5INPU3NSrQ&s" alt="Margherita Pizza">
+            <p>Margherita Pizza - Rs.249</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://www.allrecipes.com/thmb/ggiyFcDVOLtboBdHmZbAlZ6PIcU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14172-ceasar-salad-supreme-armag-4x3-102369087-f709f7d6e1ac402ba07335f2d18e9272.jpg" alt="Caesar Salad">
+            <p>Caesar Salad - Rs.99</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://preppykitchen.com/wp-content/uploads/2022/03/Chocolate-Lava-Cake-Recipe.jpg" alt="Chocolate Lava Cake">
+            <p>Chocolate Lava Cake - Rs.99</p>
+        </div>
+        <div class="menu-item">
+            <img src="burger.jpg" alt="Veg Burger">
+            <p>Veg Burger - <s>Rs.79</s> Rs.59</p>
+        </div>
+        <div class="menu-item">
+            <img src="Naan.jpg" alt="Garlic Naan">
+            <p>Garlic Naan - Rs.45</p>
+        </div>
+        <div class="menu-item">
+            <img src="aloo parantha.jpg" alt="Aloo Parantha">
+            <p>Aloo Parantha - Rs.40</p>
+        </div>
+    </section>
+
+    <section id="Order Details">
+        <h2>Order Now</h2>
+        <input type="checkbox">Pasta Primavera
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+    <br><br>
+        <input type="checkbox">Margherita Pizza
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+        <br><br>
+        <input type="checkbox">Caesar Salad 
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+        <br><br>
+        <input type="checkbox">Chocolate Lava Cake
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+            <br><br>
+        <input type="checkbox">Veg Burger
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+            <br><br>
+        <input type="checkbox">Garlic Naan
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+            <br><br>
+        <input type="checkbox">Aloo Parantha 
+        <br>
+        Qty: <select name="Qty">
+            <option value="Qty">select</option>
+            <option value="Qty">1</option>
+            <option value="Qty">2</option>
+            <option value="Qty">3</option>
+            <option value="Qty">custom</option>
+            </select>
+        <br><br>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Mobile No.:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Address:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            
+
+           <button type="submit">Confirm Order</button>
+        </form>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Mail Us: &nbsp;<a href="mailto:akshayarajgupta@gmail.com">akshayarajgupta@gmail.com</a>
+        <p>Contact No.: &nbsp;8279850188</p>
+        <P>Address:&nbsp;LPU, Phagwara, Punjab</P>
+        <p>&copy; 2024 Foodie Bay. All rights reserved.</p>
+    </footer>
+</body>
+</html>
